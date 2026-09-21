@@ -199,6 +199,9 @@ ul.task-list li input[type="checkbox"] {
 .bslib-gap-spacing {
   gap: 0.4rem !important;
 }
+/* Narrow text card beside each summary heatmap (### Column {width=22%}). */
+.side-text .card-body { font-size: 0.9rem; line-height: 1.4; padding: 0.6rem 0.8rem !important; }
+.side-text p { margin-bottom: 0.6rem; }
 </style>
 <div class="bslib-grid-item html-fill-item bslib-grid" data-layout="flow" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
 <div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
@@ -283,9 +286,10 @@ Purple markers are the AutoGC monitors; red circles are industrial sources of th
     </span>
 </bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
-<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
+<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 22fr) minmax(3em, 78fr);
 grid-auto-rows: minmax(0, 1fr);">
-<div class="card bslib-card html-fill-container" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card side-text bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <p>One row per monitor, grouped by map section. Each cell is the monitor’s <strong>combined cancer total</strong> for that period: the measured <strong>average level</strong> of each cancer risk pollutant (1,3-butadiene and benzene) divided by its <strong>Screening Level</strong>, then added together. A value below <strong>1.00x</strong> is below the screening level; above <strong>1.00x</strong> means the combined level exceeds it. Read down a column to compare monitors, or across a row to see how one monitor has changed.</p>
 <p>To see the individual pollutants behind each total, visit <a href="./index_bg1_location.html">Cancer Risk by Location</a>, where every monitor has its own card.</p>
@@ -295,7 +299,9 @@ grid-auto-rows: minmax(0, 1fr);">
     <span class="bslib-full-screen-enter badge rounded-pill">
         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
     </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div><div class="bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
 <img src="index_files/figure-html/bg1-summary-output-1.png" id="bg1-summary" class="img-fluid quarto-dashboard-img-contain">
@@ -308,9 +314,11 @@ grid-auto-rows: minmax(0, 1fr);">
     </span>
 </bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
-<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
+</div>
+<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 22fr) minmax(3em, 78fr);
 grid-auto-rows: minmax(0, 1fr);">
-<div class="card bslib-card html-fill-container" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card side-text bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <p>One row per monitor, grouped by map section. Each cell is the monitor’s <strong>total</strong> across all thirteen other-health-risk pollutants for that period: each pollutant’s average level divided by its screening level, then added together. A screening level is the concentration at or below which EPA does not expect health effects. Almost every total sits well below <strong>1.00x</strong> and appears in the palest shade; a darker cell marks a monitor and period worth a closer look on the detail tabs.</p>
 <p>To see the pollutants one by one, visit <a href="./index_bg2_pollutants.html">Other Health Risks by Pollutants and Location</a>. To see which individual pollutants drive each health effect, visit <a href="./index_bg2_effect.html">Other Health Risks by Health Indicator</a>.</p>
@@ -320,7 +328,9 @@ grid-auto-rows: minmax(0, 1fr);">
     <span class="bslib-full-screen-enter badge rounded-pill">
         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
     </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div><div class="bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
 <img src="index_files/figure-html/bg2-summary-output-1.png" id="bg2-summary" class="img-fluid quarto-dashboard-img-contain">
@@ -333,56 +343,24 @@ grid-auto-rows: minmax(0, 1fr);">
     </span>
 </bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
-<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
+</div>
+<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 22fr) minmax(3em, 78fr);
 grid-auto-rows: minmax(0, 1fr);">
-<div class="card bslib-card html-fill-container" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card side-text bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
-<p>The Clean Air Act identifies 6 air pollutants that pose the greatest health risks. They are known as criteria pollutants. This section tracks four EPA criteria pollutants, sulfur dioxide (SO₂), nitrogen dioxide (NO₂), ozone (O₃), and fine particle pollution (PM2.5), measured at the eleven TCEQ regulatory monitors that lie within the area of the monitor map — Baytown, Baytown Garth, Channelview, Clinton, Houston Deer Park #2, Houston East, Finnigan Park, North Wayside, Pleasantville Elementary, Lynchburg Ferry and Park Place. The EPA uses air monitoring data to determine if pollution levels meet the Clean Air Act requirements. They make these decisions based on a number representing all the measurements over a year taken at an air monitor. This number is called a <strong>Design Value</strong>. The figure has one panel per pollutant, with every site as a row; a hatched row means that site does not measure that pollutant. In each panel, each cell shows the <strong>EPA Design Value</strong> for that pollutant divided by the corresponding <strong>National Ambient Air Quality Standard (NAAQS)</strong>. A value below 1.0 means the design value is within the standard; values above 1.0 indicate the yearly average is greater than the Clean Air Act (NAAQS) standard and poses an increased health risk.</p>
-<p><strong>Design values</strong> are computed using the same statistics EPA uses to determine if air pollution levels in the region are meeting the criteria set by the Clean Air Act:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Pollutant</th>
-<th>NAAQS</th>
-<th>Design Value Method</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>SO₂</td>
-<td>75 ppb (1-hour)</td>
-<td>99th percentile of daily 1-hr maximum concentrations</td>
-</tr>
-<tr class="even">
-<td>NO₂</td>
-<td>100 ppb (1-hour)</td>
-<td>98th percentile of daily 1-hr maximum concentrations</td>
-</tr>
-<tr class="odd">
-<td>O₃</td>
-<td>0.070 ppm (8-hour)</td>
-<td>4th-highest daily maximum 8-hr average concentration</td>
-</tr>
-<tr class="even">
-<td>PM2.5</td>
-<td>9 µg/m³ (1-year)</td>
-<td>Mean or average</td>
-</tr>
-</tbody>
-</table>
-<p>For the yearly columns (2023–2025), each value represents a single-year design value ratio. EPA AQS releases data on a delay of weeks to months, so the criteria-pollutant data usually ends before the TCEQ data on the other tabs. The three moving-window columns say, on a second line of their heading, which month their data actually ends in: <strong>“YTD (through …)”</strong> covers January 1 to the last available day; <strong>“Last 365 Days (ending …)”</strong> is the 365 days ending on the last available day; and <strong>“Last Available Month”</strong> is that final month by itself. All three use the same design value methodology.</p>
+<p>The Clean Air Act names six <strong>criteria pollutants</strong> — common air pollutants regulated under National Ambient Air Quality Standards (NAAQS). Four of them are measured at the eleven TCEQ regulatory monitors within the area of the monitor map: ozone (O₃), fine particles (PM2.5), nitrogen dioxide (NO₂) and sulfur dioxide (SO₂).</p>
+<p>The figure has one panel per pollutant, with every site as a row; a hatched row means that site does not measure that pollutant. Each cell is the site’s <strong>EPA design value</strong> — the statistic EPA uses to judge that pollutant against its standard — divided by the <strong>NAAQS</strong>. Below <strong>1.00x</strong> is within the standard; above <strong>1.00x</strong> is over it. These are single-period values, not EPA’s official three-year determinations. EPA releases this data weeks to months late, so the last three columns say which month they end in.</p>
+<p>How each design value is calculated, the standards used, and a card for every site are on the <a href="./index_bg3_location.html">EPA Criteria Pollutants by Location</a> tab.</p>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
     <template>Expand</template>
     <span class="bslib-full-screen-enter badge rounded-pill">
         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
     </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div><div class="bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
 <img src="index_files/figure-html/bg3-matrix-output-1.png" id="bg3-matrix" class="img-fluid quarto-dashboard-img-contain">
@@ -393,8 +371,12 @@ grid-auto-rows: minmax(0, 1fr);">
     <span class="bslib-full-screen-enter badge rounded-pill">
         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
     </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden">
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 
+
+<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden">
+
+</div>
 </div>
 </div>
 </div>
